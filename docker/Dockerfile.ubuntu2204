@@ -1,0 +1,7 @@
+FROM ubuntu:jammy
+
+COPY ./sources.list.ubuntu2204 /etc/apt/sources.list
+
+RUN apt-get update && apt-get install -y python3 python3-pip apt-rdepends && ln -s /usr/bin/python3 /usr/bin/python
+
+WORKDIR /app
