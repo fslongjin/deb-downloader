@@ -46,6 +46,9 @@ def resolve_packages(package_name: str):
     # Find all package names in the output
     packages = package_pattern.findall(apt_rdepends_output)
     
+    # 将 package_name 添加到数组开头
+    packages.insert(0, package_name)
+
     # 对packages去重
     packages = list(set(packages))
     
